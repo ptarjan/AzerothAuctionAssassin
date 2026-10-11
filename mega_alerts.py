@@ -933,13 +933,6 @@ class Alerts(QThread):
             # for debugging one realm at a time
             main_single()
         else:
-            mega_data.send_discord_message(
-                "🟢Starting mega alerts and scan all AH data instantly.🟢\n"
-                + "🟢These first few messages might be old.🟢\n"
-                + "🟢All future messages will release seconds after the new data is available.🟢"
-            )
-            time.sleep(1)
-
             if not self.running:
                 self.progress.emit("Stopped alerts!")
                 self.completed.emit(1)
